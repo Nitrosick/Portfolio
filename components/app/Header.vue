@@ -2,11 +2,14 @@
   <header class="header">
     <div class="logo" />
     <nav class="menu">
-      <MenuItem to="#main" text="home" :selected="scroll === 0" />
+      <MenuItem to="#main" text="home" :selected="scroll <= 150" />
       <MenuItem to="#aboutme" text="about me" />
       <MenuItem to="#projects" text="projects" />
     </nav>
-    <Button text="contact me" />
+    <Button
+      text="contact me"
+      href="#contacts"
+    />
   </header>
 </template>
 

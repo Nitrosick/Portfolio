@@ -54,8 +54,14 @@ h3 { font-size: $font-size-h3; }
   font-weight: 500;
 }
 
-.plug {
-  flex-grow: 1;
+// .plug {
+//   flex-grow: 1;
+// }
+
+.splitter {
+  height: 0.3rem;
+  background: linear-gradient(90deg, transparent 10%, var(--color-orange-2), var(--color-orange-3), var(--color-orange-2), transparent 90%);
+  margin: calc($padding-unit * 2.5) 0;
 }
 
 /* Page transition */

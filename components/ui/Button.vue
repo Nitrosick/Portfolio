@@ -31,7 +31,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .button {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;

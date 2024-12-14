@@ -36,14 +36,14 @@ $font-size-h3: 1.75rem;
 $font-size-text: 1.5rem;
 $font-size-caption: 1rem;
 
-$width-content: 1440px;
+$width-sm: 576px;
+$width-md: 768px;
+$width-lg: 1000px;
+$width-xl: 1200px;
+$width-xxl: 1440px;
+$width-xxxl: 1920px;
 
-// $width-sm: 576px;
-// $width-md: 768px;
-// $width-lg: 992px;
-// $width-xl: 1200px;
-// $width-xxl: 1400px;
-// $width-xxxl: 1920px;
+$width-content: $width-xxl;
 
 // $height-header: 6rem;
 // $height-header-m: 3rem;
