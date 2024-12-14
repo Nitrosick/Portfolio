@@ -1,8 +1,5 @@
 <template>
   <Main />
   <AboutMe />
+  <Projects />
 </template>
-
-<script setup>
-
-</script>

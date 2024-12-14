@@ -39,9 +39,9 @@ h1, h2, h3 {
   margin: 0;
 }
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
+h1 { font-size: $font-size-h1 }
+h2 { font-size: $font-size-h2 }
+h3 { font-size: $font-size-h3 }
 
 .subtitle {
   font-size: $font-size-h3;
@@ -54,9 +54,9 @@ h3 { font-size: $font-size-h3; }
   font-weight: 500;
 }
 
-// .plug {
-//   flex-grow: 1;
-// }
+.plug {
+  flex-grow: 1;
+}
 
 .splitter {
   height: 0.3rem;
@@ -94,15 +94,4 @@ h3 { font-size: $font-size-h3; }
 // ::-webkit-scrollbar-thumb {
 //   background-color: var(--color-gold-2);
 //   border: 0.4rem solid $color-outcontent;
-// }
-
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// input:-webkit-autofill:active{
-//   -webkit-box-shadow: 0 0 0 30px $color-outcontent inset !important;
-// }
-
-// input:-webkit-autofill{
-//   -webkit-text-fill-color: $color-text !important;
 // }

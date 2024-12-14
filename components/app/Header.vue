@@ -29,7 +29,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   gap: $padding-unit;
   width: 100%;
   background-color: var(--color-black-o);
-  padding: $padding-unit;
+  padding: $padding-unit calc($padding-unit * 1.5);
   border-radius: 100rem;
 }
 

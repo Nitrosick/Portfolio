@@ -18,7 +18,7 @@
         </p>
       </div>
       <div class="splitter" />
-      <div class="skills">
+      <div class="skills-container">
         <h2 class="title">my skills</h2>
         <Skills />
         <div>
@@ -66,7 +66,7 @@
   }
 }
 
-.skills {
+.skills-container {
   display: flex;
   flex-direction: column;
   gap: calc($padding-unit * 1.5);

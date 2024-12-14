@@ -3,28 +3,38 @@
     :is="href ? 'a' : 'button'"
     :href="href"
     :download="download"
-    :class="`button button-${type}`"
+    :target="target"
+    :class="[
+      `button button-${type}`,
+      { compact: icon && !text }
+    ]"
   >
     <div class="button-bg" />
     <div class="button-bg button-bg-hover" />
     <div class="button-bg button-bg-active" />
-    <span class="button-text">
-      {{ text }}
+    <div class="button-text">
+      <span v-if="text">{{ text }}</span>
       <Icon
         v-if="icon"
         :name="icon"
       />
-    </span>
+    </div>
   </Component>
 </template>
 
 <script setup>
 const props = defineProps({
   type: { type: String, default: 'm' },
-  text: { type: String, required: true },
+  text: { type: String, default: null },
   icon: { type: String, default: null },
   href: { type: String, default: undefined },
   download: { type: [String, Boolean], default: undefined }
+})
+
+const target = computed(() => {
+  const { href } = props
+  if (!href || href.startsWith('#')) return undefined
+  return '_blank'
 })
 </script>
 
@@ -68,6 +78,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
     z-index: 1;
   }
 
@@ -87,7 +98,8 @@ const props = defineProps({
 }
 
 .button-s {
-  padding: calc($padding-unit / 2) $padding-unit;
+  height: calc($padding-unit * 2);
+  padding: 0 $padding-unit;
   font-size: $font-size-caption;
 }
 
@@ -103,5 +115,9 @@ const props = defineProps({
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
+}
+
+.compact {
+  padding: 0 calc($padding-unit / 2);
 }
 </style>
