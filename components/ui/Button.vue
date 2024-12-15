@@ -60,7 +60,7 @@ const target = computed(() => {
     height: 100%;
     background: var(--gradient-orange-3);
     z-index: 0;
-    transition: opacity 0.2s;
+    transition: opacity $transition-time;
   }
 
   &-bg-hover {

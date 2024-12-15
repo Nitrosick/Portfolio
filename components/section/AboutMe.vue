@@ -42,8 +42,6 @@
 
 .content {
   max-width: $width-lg;
-  padding-top: calc($padding-unit * 4);
-  padding-bottom: calc($padding-unit * 4);
 }
 
 .title {
@@ -58,7 +56,7 @@
   &-link {
     font-weight: 600;
     color: var(--color-orange-2);
-    transition: color 0.2s;
+    transition: color $transition-time;
 
     &:hover {
       color: var(--color-orange-3);

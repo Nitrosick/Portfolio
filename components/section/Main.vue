@@ -85,6 +85,7 @@ onMounted(() => toType())
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding-top: calc($padding-unit * 2);
 }
 
 .title {
@@ -108,7 +109,7 @@ onMounted(() => toType())
 }
 
 .social {
-  margin-bottom: calc($padding-unit * 5);
+  margin-bottom: calc($padding-unit * 3);
 }
 
 .cv {

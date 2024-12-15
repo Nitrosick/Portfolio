@@ -80,7 +80,7 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s;
+    transition: transform calc($transition-time * 5);
   }
 }
 
@@ -123,6 +123,6 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
   border-radius: 50%;
   background: linear-gradient(190deg, var(--color-white), transparent);
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity calc($transition-time * 2);
 }
 </style>

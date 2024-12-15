@@ -2,4 +2,5 @@
   <Main />
   <AboutMe />
   <Projects />
+  <Contacts />
 </template>

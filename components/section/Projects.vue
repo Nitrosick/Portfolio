@@ -25,11 +25,6 @@ import projects from '@/const/projects'
   background: var(--gradient-orange-4);
 }
 
-.content {
-  padding-top: calc($padding-unit * 4);
-  padding-bottom: calc($padding-unit * 4);
-}
-
 .title {
   margin-bottom: calc($padding-unit * 1.5);
 }

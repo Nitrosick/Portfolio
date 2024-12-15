@@ -1,20 +1,8 @@
 const title = 'NB Portfolio'
-// const backend = 'https://hommbase.ru/api/index.php/'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  // routeRules: {
-  //   '/auth/**': { ssr: false },
-  //   '/user/**': { ssr: false },
-  //   '/admin/**': { ssr: false }
-  // },
-  runtimeConfig: {
-    public: {
-      projectTitle: title,
-      // backendUrl: backend
-    }
-  },
   app: {
     head: {
       charset: 'utf-8',
@@ -24,7 +12,6 @@ export default defineNuxtConfig({
       ],
       noscript: [{ children: 'JavaScript is required' }]
     }
-    // pageTransition: { name: 'page', mode: 'out-in' }
   },
   components: {
     dirs: [
@@ -32,23 +19,6 @@ export default defineNuxtConfig({
       'components/app',
       'components/section'
     ]
-  },
-  modules: [
-    // '@nuxtjs/style-resources',
-    // '@pinia/nuxt',
-    // '@nuxtjs/i18n',
-    // 'dayjs-nuxt',
-    // 'nuxt-gtag',
-    // 'yandex-metrika-module-nuxt3',
-    // 'nuxt-aos',
-    // '@vite-pwa/nuxt',
-    // '@nuxtjs/device'
-  ],
-  router: {
-    options: {
-      linkActiveClass: 'active-link',
-      linkExactActiveClass: 'exact-active-link'
-    }
   },
   vite: {
     css: {
@@ -68,10 +38,4 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['store']
   }
-  // aos: {
-  //   delay: 150,
-  //   duration: 1000,
-  //   easing: 'ease-out',
-  //   once: true
-  // }
 })

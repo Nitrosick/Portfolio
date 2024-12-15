@@ -49,6 +49,6 @@ const props = defineProps({
   height: 0.3rem;
   transform-origin: 50% 50%;
   transform: scale(0, 1);
-  transition: transform 0.2s;
+  transition: transform $transition-time;
 }
 </style>

@@ -26,7 +26,7 @@ import social from '@/const/social'
   gap: calc($padding-unit * 1.5);
 
   &-item {
-    transition: filter 0.2s;
+    transition: filter $transition-time;
 
     &:hover {
       filter: drop-shadow($shadow);
