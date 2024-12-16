@@ -33,5 +33,13 @@ import projects from '@/const/projects'
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $padding-unit;
+
+  @include breakpoint-xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-md {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
