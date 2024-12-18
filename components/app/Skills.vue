@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <span>Frontend:</span>
+    <span class="skills-title">Frontend:</span>
     <div class="skills-row">
       <div
         v-for="s in skills.frontend"
@@ -10,7 +10,7 @@
         {{ s }}
       </div>
     </div>
-    <span>Backend:</span>
+    <span class="skills-title">Backend:</span>
     <div class="skills-row">
       <div
         v-for="s in skills.backend"
@@ -20,7 +20,7 @@
         {{ s }}
       </div>
     </div>
-    <span>Version Control:</span>
+    <span class="skills-title">Version Control:</span>
     <div class="skills-row">
       <div
         v-for="s in skills.git"
@@ -30,7 +30,7 @@
         {{ s }}
       </div>
     </div>
-    <span>Design Tools:</span>
+    <span class="skills-title">Design Tools:</span>
     <div class="skills-row">
       <div
         v-for="s in skills.design"
@@ -51,21 +51,48 @@ import skills from '@/const/skills'
 .skills {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  align-items: center;
-  gap: $padding-unit;
+  grid-template-rows: repeat(4, auto);
+  gap: $unit;
   white-space: nowrap;
+
+  &-title {
+    line-height: 1.5;
+
+    @include bp-sm {
+      line-height: 2;
+    }
+  }
 
   &-row {
     display: flex;
     align-items: center;
-    gap: calc($padding-unit / 2);
+    gap: calc($unit / 2);
+
+    @include bp-lg {
+      flex-wrap: wrap;
+    }
+
+    @include bp-sm {
+      gap: calc($unit / 3);
+    }
+  }
+
+  @include bp-lg {
+    gap: calc($unit * 1.5) $unit;
+  }
+
+  @include bp-sm {
+    gap: calc($unit * 1.2) calc($unit * 0.5);
   }
 }
 
 .item {
   border: 2px solid var(--color-orange-2);
   border-radius: 100rem;
-  padding: calc($padding-unit / 3) calc($padding-unit * 1.3);
+  padding: calc($unit / 3) calc($unit * 1.3);
+
+  @include bp-sm {
+    padding: calc($unit / 4) $unit;
+  }
 }
 </style>

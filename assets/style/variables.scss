@@ -1,7 +1,8 @@
 :root {
   --color-white: #ffffff;
   --color-black: #000508;
-  --color-black-o: #20202166;
+  --color-black-o-1: #20202166;
+  --color-black-o-2: #000508CC;
   --color-orange-1: #DA4510;
   --color-orange-2: #E76A04;
   --color-orange-3: #F79001;
@@ -9,7 +10,13 @@
   --gradient-orange-2: linear-gradient(180deg, #E36B04 0%, #D65207 100%);
   --gradient-orange-3: linear-gradient(180deg, #F79101 45.6%, #DE5406 100%);
   --gradient-orange-4: linear-gradient(#EC6206, #BC1422);
+
   --unit: 1.2rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 1.75rem;
+  --font-size-xl: 2.5rem;
+  --font-size-xxl: clamp(1.5rem, 5.5vw, 4rem);
 }
 
 $color-text: var(--color-white);
@@ -19,36 +26,47 @@ $font-title: 'Fira Code', 'Calibri', 'Arial', sans-serif;
 $font-main: 'Montserrat', 'Calibri', 'Arial', sans-serif;
 
 $shadow: 0 4px 4px #00000040;
-$padding-unit: var(--unit);
+$unit: var(--unit);
 $transition-time: 0.2s;
 
-$font-size-h1: 4rem;
-$font-size-h2: 2.5rem;
-$font-size-h3: 1.75rem;
-$font-size-text: 1.5rem;
-$font-size-caption: 1rem;
+$font-size-h1: var(--font-size-xxl);
+$font-size-h2: var(--font-size-xl);
+$font-size-h3: var(--font-size-lg);
+$font-size-text: var(--font-size-md);
+$font-size-caption: var(--font-size-sm);
 
-$width-sm: 576px;
-$width-md: 768px;
-$width-lg: 1000px;
-$width-xl: 1200px;
-$width-xxl: 1440px;
+$sm: 576px;
+$md: 768px;
+$lg: 1000px;
+$xl: 1200px;
+$xxl: 1440px;
 
-$width-content: $width-xxl;
+$content: $xxl;
+$min-width: 325px;
 
-@mixin breakpoint-sm { @media (max-width: $width-sm) { @content; } }
-@mixin breakpoint-md { @media (max-width: $width-md) { @content; } }
-@mixin breakpoint-lg { @media (max-width: $width-lg) { @content; } }
-@mixin breakpoint-xl { @media (max-width: $width-xl) { @content; } }
-@mixin breakpoint-xxl { @media (max-width: $width-xxl) { @content; } }
+$cursor-default: url(/images/cursors/default.cur) 0 0, default;
+$cursor-pointer: url(/images/cursors/pointer.cur) 10 0, pointer;
 
-@include breakpoint-lg {
-  :root { --unit: 0.9rem }
+@mixin bp-sm { @media (max-width: $sm) { @content; } }
+@mixin bp-md { @media (max-width: $md) { @content; } }
+@mixin bp-lg { @media (max-width: $lg) { @content; } }
+@mixin bp-xl { @media (max-width: $xl) { @content; } }
+@mixin bp-xxl { @media (max-width: $xxl) { @content; } }
+
+@include bp-md {
+  :root {
+    --font-size-sm: 0.9rem;
+    --font-size-md: 1.25rem;
+    --font-size-lg: 1.4rem;
+    --font-size-xl: 2rem;
+  }
 }
 
-// @mixin vartical {
-//   @media (orientation: landscape) { @content; }
-// }
-// @mixin horizontal {
-//   @media (orientation: portrait) { @content; }
-// }
+@include bp-sm {
+  :root {
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.15rem;
+    --font-size-xl: 1.5rem;
+  }
+}

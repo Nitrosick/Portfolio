@@ -8,14 +8,20 @@
 #__nuxt {
   font-family: $font-main;
   min-height: 100vh;
+  min-width: $min-width;
   font-size: $font-size-text;
   color: $color-text;
+  cursor: $cursor-default;
 }
 
 .content {
-  max-width: $width-content;
+  max-width: $content;
   margin: 0 auto;
-  padding: calc($padding-unit * 4) calc($padding-unit * 2);
+  padding: calc($unit * 4) calc($unit * 2);
+
+  @include bp-sm {
+    padding: calc($unit * 3) $unit;
+  }
 }
 
 :focus,
@@ -27,6 +33,7 @@ a {
   text-decoration: none;
   color: $color-text;
   font-weight: 500;
+  cursor: $cursor-pointer;
 }
 
 p {
@@ -61,7 +68,12 @@ h3 { font-size: $font-size-h3 }
 .splitter {
   height: 0.3rem;
   background: linear-gradient(90deg, transparent 10%, var(--color-orange-2), var(--color-orange-3), var(--color-orange-2), transparent 90%);
-  margin: calc($padding-unit * 2.5) 0;
+  margin: calc($unit * 2.5) 0;
+
+  @include bp-sm {
+    height: 0.2rem;
+    margin: calc($unit * 2) 0;
+  }
 }
 
 ::selection {
@@ -75,17 +87,5 @@ h3 { font-size: $font-size-h3 }
 }
 
 ::-webkit-scrollbar {
-  // width: $padding-unit;
-  // height: $padding-unit;
   width: 0;
 }
-
-// ::-webkit-scrollbar-track {
-//   border-radius: 100rem;
-//   background-color: transparent;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background-color: var(--color-orange-2);
-//   border-radius: 100rem;
-// }

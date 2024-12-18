@@ -21,9 +21,8 @@
       <div class="skills-container">
         <h2 class="title">my skills</h2>
         <Skills />
-        <div>
+        <div class="contact">
           <Button
-            class="contact"
             text="contact me"
             type="l"
             href="#contacts"
@@ -41,7 +40,7 @@
 }
 
 .content {
-  max-width: $width-lg;
+  max-width: $lg;
 }
 
 .title {
@@ -51,7 +50,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: calc($padding-unit * 1.5);
+  gap: calc($unit * 1.5);
 
   &-link {
     font-weight: 600;
@@ -62,15 +61,31 @@
       color: var(--color-orange-3);
     }
   }
+
+  @include bp-sm {
+    gap: $unit;
+  }
 }
 
 .skills-container {
   display: flex;
   flex-direction: column;
-  gap: calc($padding-unit * 1.5);
+  gap: calc($unit * 1.5);
+
+  @include bp-sm {
+    gap: $unit;
+  }
 }
 
 .contact {
-  margin-top: $padding-unit;
+  margin-top: $unit;
+
+  @include bp-md {
+    align-self: center;
+  }
+
+  @include bp-sm {
+    margin-top: calc($unit * 2);
+  }
 }
 </style>

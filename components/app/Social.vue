@@ -1,5 +1,8 @@
 <template>
-  <div class="social">
+  <div
+    class="social"
+    :class="{ minimized: minimized }"
+  >
     <a
       v-for="s in social"
       :key="s.id"
@@ -9,7 +12,7 @@
     >
       <Icon
         :name="s.icon"
-        size="l"
+        :size="minimized ? 'm' : 'l'"
       />
     </a>
   </div>
@@ -17,13 +20,17 @@
 
 <script setup>
 import social from '@/const/social'
+
+const props = defineProps({
+  minimized: { type: Boolean, default: false }
+})
 </script>
 
 <style lang="scss" scoped>
 .social {
   display: flex;
   align-items: center;
-  gap: calc($padding-unit * 1.5);
+  gap: calc($unit * 1.5);
 
   &-item {
     transition: filter $transition-time;
@@ -32,5 +39,17 @@ import social from '@/const/social'
       filter: drop-shadow($shadow);
     }
   }
+
+  @include bp-md {
+    gap: calc($unit * 1.35);
+  }
+
+  @include bp-sm {
+    gap: calc($unit * 1.2);
+  }
+}
+
+.minimized {
+  gap: calc($unit * 0.8);
 }
 </style>

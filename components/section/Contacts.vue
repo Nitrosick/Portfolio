@@ -28,13 +28,17 @@
   line-height: 1.3;
 
   &-data {
-    max-width: $width-lg;
+    max-width: $lg;
     margin: 0 auto;
   }
 
   &-list {
     margin: 0;
     line-height: 1.5;
+
+    @include bp-sm {
+      margin-bottom: calc($unit * 5);
+    }
   }
 }
 
@@ -43,6 +47,10 @@
 }
 
 .text {
-  margin: calc($padding-unit * 1.5) 0;
+  margin: calc($unit * 1.5) 0;
+
+  @include bp-sm {
+    margin: $unit 0;
+  }
 }
 </style>

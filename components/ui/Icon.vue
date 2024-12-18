@@ -28,6 +28,15 @@ const props = defineProps({
 .icon-m { width: 1.75rem }
 .icon-l { width: 3rem }
 
+@include bp-md {
+  .icon-l { width: 2.7rem }
+}
+
+@include bp-sm {
+  .icon-m { width: 1.5rem }
+  .icon-l { width: 2.4rem }
+}
+
 .icon {
   width: 100%;
   height: 100%;

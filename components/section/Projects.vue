@@ -25,21 +25,44 @@ import projects from '@/const/projects'
   background: var(--gradient-orange-4);
 }
 
+.content {
+  @include bp-md {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .title {
-  margin-bottom: calc($padding-unit * 1.5);
+  margin-bottom: calc($unit * 1.5);
+
+  @include bp-md {
+    padding-left: calc($unit * 2);
+  }
+
+  @include bp-sm {
+    padding-left: $unit;
+  }
 }
 
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $padding-unit;
+  gap: $unit;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 
-  @include breakpoint-xl {
+  @include bp-xl {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include breakpoint-md {
-    grid-template-columns: 1fr;
+  @include bp-md {
+    display: flex;
+    padding: 0 calc($unit * 2);
+  }
+
+  @include bp-sm {
+    padding: 0 $unit;
   }
 }
 </style>

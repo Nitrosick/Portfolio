@@ -17,19 +17,20 @@
       </p>
       <div class="plug" />
       <div class="footer">
-        <Button
-          text="see project"
-          type="s"
-          :href="data.link"
-        />
-        <Button
-          v-if="data.github"
-          type="s"
-          icon="github_1"
-          :href="data.github"
-          title="GitHub link"
-        />
-        <div class="plug" />
+        <div class="footer-links">
+          <Button
+            text="see project"
+            type="s"
+            :href="data.link"
+          />
+          <Button
+            v-if="data.github"
+            type="s"
+            icon="github_1"
+            :href="data.github"
+            title="GitHub link"
+          />
+        </div>
         <div class="stack">
           <Icon
             v-for="t in data.stack"
@@ -55,10 +56,11 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
 <style lang="scss" scoped>
 .project {
   position: relative;
-  background-color: var(--color-black-o);
-  border-radius: $padding-unit;
+  background-color: var(--color-black-o-1);
+  border-radius: $unit;
   overflow: hidden;
   box-shadow: $shadow;
+  scroll-snap-align: none center;
 
   &:hover {
     .screenshot-img {
@@ -69,11 +71,19 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
       opacity: 0.25;
     }
   }
+
+  @include bp-md {
+    min-width: 70vw;
+  }
+
+  @include bp-sm {
+    border-radius: calc($unit * 0.7);
+  }
 }
 
 .screenshot {
   aspect-ratio: 11/7;
-  border-radius: $padding-unit;
+  border-radius: $unit;
   overflow: hidden;
 
   &-img {
@@ -82,6 +92,10 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
     object-fit: cover;
     transition: transform calc($transition-time * 5);
   }
+
+  @include bp-sm {
+    border-radius: calc($unit * 0.7);
+  }
 }
 
 .data {
@@ -89,8 +103,13 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: $padding-unit;
-  padding-bottom: calc($padding-unit * 2);
+  padding: $unit;
+  padding-bottom: calc($unit * 2);
+
+  @include bp-sm {
+    height: 14.5rem;
+    padding-bottom: $unit;
+  }
 }
 
 .title {
@@ -99,19 +118,38 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
 }
 
 .description {
-  margin: $padding-unit 0;
+  margin: $unit 0;
 }
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc($padding-unit / 2);
+
+  &-links {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    @include bp-sm {
+      order: 2;
+    }
+  }
+
+  @include bp-sm {
+    flex-direction: column;
+    gap: calc($unit * 0.8);
+    align-items: flex-start;
+  }
 }
 
 .stack {
   display: flex;
   gap: 0.3rem;
+
+  @include bp-sm {
+    order: 1;
+  }
 }
 
 .lens {
@@ -124,5 +162,9 @@ const image = computed(() => `/images/projects/${props.data.name.replaceAll(' ',
   background: linear-gradient(190deg, var(--color-white), transparent);
   opacity: 0;
   transition: opacity calc($transition-time * 2);
+
+  @include bp-sm {
+    display: none;
+  }
 }
 </style>

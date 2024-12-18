@@ -50,7 +50,7 @@ const target = computed(() => {
   border-radius: 100rem;
   box-shadow: $shadow;
   overflow: hidden;
-  cursor: pointer;
+  cursor: $cursor-pointer;
 
   &-bg {
     position: absolute;
@@ -98,26 +98,35 @@ const target = computed(() => {
 }
 
 .button-s {
-  height: calc($padding-unit * 2);
-  padding: 0 $padding-unit;
+  height: calc($unit * 2);
+  padding: 0 $unit;
   font-size: $font-size-caption;
 }
 
 .button-m {
-  padding: calc($padding-unit / 2) $padding-unit;
+  padding: calc($unit / 2) $unit;
 }
 
 .button-l {
-  padding: $padding-unit calc($padding-unit * 2.5);
+  padding: $unit calc($unit * 2.5);
+
+  @include bp-sm {
+    padding: calc($unit * 0.8) calc($unit * 2);
+  }
 }
 
 .button-circle {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
+
+  @include bp-sm {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 
 .compact {
-  padding: 0 calc($padding-unit / 2);
+  padding: 0 calc($unit / 2);
 }
 </style>

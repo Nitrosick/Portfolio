@@ -75,6 +75,10 @@ onUnmounted(() => {
       opacity: 1;
     }
   }
+
+  @include bp-lg {
+    display: none;
+  }
 }
 
 .hidden {
