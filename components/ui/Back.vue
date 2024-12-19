@@ -66,7 +66,9 @@ onUnmounted(() => {
     transition: opacity $transition-time;
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     .back-button-bg {
       opacity: 0.5;
     }

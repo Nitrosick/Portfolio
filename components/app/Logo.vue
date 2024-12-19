@@ -12,7 +12,7 @@
   height: 2.7rem;
 
   @include bp-sm {
-    height: 2.3rem;
+    height: 2.2rem;
   }
 }
 </style>

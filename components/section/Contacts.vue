@@ -36,6 +36,16 @@
     margin: 0;
     line-height: 1.5;
 
+    a {
+      padding: 0 0.2rem;
+
+      &:focus,
+      &:active {
+        background-color: var(--color-white-o);
+        border-radius: 0.5rem;
+      }
+    }
+
     @include bp-sm {
       margin-bottom: calc($unit * 5);
     }

@@ -7,10 +7,16 @@
         class="menu"
         :class="{ hidden: !menuOpened }"
       >
-        <MenuItem to="#main" text="home" :selected="scroll <= 150" @close="menuOpened = false" />
-        <MenuItem to="#aboutme" text="about me" @close="menuOpened = false" />
-        <MenuItem to="#projects" text="projects" @close="menuOpened = false" />
-        <MenuItem to="#contacts" text="contact me" class="contacts-button-m" @close="menuOpened = false" />
+        <MenuItem
+          v-for="i in menuItems"
+          :key="i.id"
+          :to="i.to"
+          :text="i.text"
+          :selected="i.to === '#main' && scroll <= 150"
+          :tabindex="!menuOpened ? -1 : undefined"
+          :class="{ 'contacts-button-m': i.to === '#contacts' }"
+          @close="menuOpened = false"
+        />
       </nav>
       <Button
         text="contact me"
@@ -28,6 +34,13 @@
 </template>
 
 <script setup>
+const menuItems = [
+  { id: 1, to: '#main', text: 'home' },
+  { id: 2, to: '#aboutme', text: 'about me' },
+  { id: 3, to: '#projects', text: 'projects' },
+  { id: 4, to: '#contacts', text: 'contact me' }
+]
+
 const scroll = ref(0)
 const menuOpened = ref(false)
 const handleScroll = () => scroll.value = window.scrollY
@@ -79,7 +92,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
   @include bp-lg {
     background: var(--gradient-orange-1);
-    padding: calc($unit * 0.5) $unit;
+    padding: calc($unit * 0.4) calc($unit * 0.8);
   }
 }
 
@@ -114,8 +127,16 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .menu-switcher {
   display: none;
 
+  &:focus,
+  &:active {
+    background-color: var(--color-white-o);
+    border-radius: 0.5rem;
+  }
+
   @include bp-lg {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     background-color: transparent;
     cursor: $cursor-pointer;

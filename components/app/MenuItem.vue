@@ -25,12 +25,18 @@ const props = defineProps({
   line-height: calc($unit * 2);
   padding: 0 calc($unit * 2);
   text-shadow: $shadow;
+  border-radius: 0.5rem;
   white-space: nowrap;
 
   &:hover {
     .underline {
       transform: scale(1, 1);
     }
+  }
+
+  &:focus,
+  &:active {
+    background-color: var(--color-white-o);
   }
 
   @include bp-lg {

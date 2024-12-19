@@ -88,6 +88,10 @@ const target = computed(() => {
     }
   }
 
+  &:focus {
+    outline: 0.5rem solid var(--color-white-o);
+  }
+
   &:active {
     box-shadow: none;
 

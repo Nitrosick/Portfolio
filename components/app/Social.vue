@@ -33,10 +33,20 @@ const props = defineProps({
   gap: calc($unit * 1.5);
 
   &-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: filter $transition-time;
+    border-radius: 0.5rem;
 
     &:hover {
       filter: drop-shadow($shadow);
+    }
+
+    &:active,
+    &:focus {
+      background-color: var(--color-white-o);
+      outline: 0.5rem solid var(--color-white-o);
     }
   }
 

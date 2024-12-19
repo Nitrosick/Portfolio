@@ -55,10 +55,17 @@
   &-link {
     font-weight: 600;
     color: var(--color-orange-2);
+    padding: 0 0.2rem;
     transition: color $transition-time;
 
     &:hover {
       color: var(--color-orange-3);
+    }
+
+    &:focus,
+    &:active {
+      background-color: var(--color-white-o);
+      border-radius: 0.5rem;
     }
   }
 
